@@ -1,17 +1,61 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="app-container">
+    @*/* --------------------------------------
+              0.1a     S I D E B A R
+         --------------------------------------
+    */ *@
     <div class="sidebar @NavMenuCssClass">
-        <div class="logo-details">
+        <div class="logo-details" @onclick="ToggleNavMenu">
+            <i class='bx bx-menu'></i>
             <div class="logo-name">APS</div>
         </div>
         <ul class="nav-links">
+            <li>
+                <NavLink>
+                    <i class='bx bx-line-chart'></i>
+                    <span class="link-name">Dashboard</span>
+                </NavLink>
+            </li>
         </ul>
     </div>
+
+    @*/* --------------------------------------
+              0.1b     C O N T E N T
+         --------------------------------------
+    */ *@
     <div class="content">
-        <div class="header"></div>
+
+        @*/* --------------------------------------
+                  0.1b.2a    header
+             --------------------------------------
+        */ *@
+        <div class="header">
+            <button class="header-toggle">File</button>
+            <button class="header-toggle">Edit</button>
+            <button class="header-toggle">Forecasting Actions</button>
+            <button class="header-toggle">Reports</button>
+            <button class="header-toggle">Customize</button>
+            <button class="header-toggle">Window</button>
+            <button class="header-toggle">Help</button>
+        </div>
+
+        @*/* --------------------------------------
+                  0.1b.2b    main
+             --------------------------------------
+        */ *@
         <div class="main">
+
+            @*/* --------------------------------------
+                  0.1b.2b.3a    panel
+                 --------------------------------------
+            */ *@
             <div class="panel"></div>
+
+            @*/* --------------------------------------
+                  0.1b.2b.3a    main-content
+                 --------------------------------------
+            */ *@
             <div class="main-content"></div>
         </div>
     </div>

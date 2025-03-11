@@ -37,6 +37,57 @@
     background-color: red;
 }
 
+    .sidebar .logo-details i {
+        font-size: 30px;
+        min-width: 70px;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+    }
+
+    .sidebar .logo-details .logo-name {
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .sidebar .nav-links {
+        padding-top: 30px;
+        height: 100%;
+    }
+
+        .sidebar .nav-links li {
+            display: relative;
+            list-style: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .nav-links li:hover {
+            background-color: #1d1b31;
+        }
+
+            .sidebar .nav-links li ::deep a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: #fff;
+            }
+
+                .sidebar .nav-links li ::deep a i {
+                    min-width: 70px;
+                    text-align: center;
+                    line-height: 50px;
+                    font-size: 20px;
+                }
+
+
+    .sidebar.collapse {
+        height: 100vh;
+        width: 70px;
+        background-color: #11101d;
+    }
+
 
 /* --------------------------------------
        0.1b     C O N T E N T
@@ -60,6 +111,13 @@
     display: flex;
     align-items: center;
 }
+
+    .header .header-toggle {
+        background-color: inherit;
+        border-width: 0px;
+        padding: 0 15px;
+        color: #11101d;
+    }
 
 /* --------------------------------------
         0.1b.2b    main
