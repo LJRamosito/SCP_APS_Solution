@@ -177,3 +177,11 @@
         0.1b.2b.3b    main-content
    --------------------------------------
 */
+
+.main-content {
+    height: 100%;
+    flex: 1;
+    padding: 10px 15px;
+    color: black;
+    font-size: 34px;
+}
