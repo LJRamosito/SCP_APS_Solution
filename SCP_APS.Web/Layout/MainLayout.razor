@@ -1,16 +1,34 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+<div class="app-container">
+    <div class="sidebar @NavMenuCssClass">
+        <div class="logo-details">
+            <div class="logo-name">APS</div>
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+        <ul class="nav-links">
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header"></div>
+        <div class="main">
+            <div class="panel"></div>
+            <div class="main-content"></div>
+        </div>
+    </div>
 </div>
+
+@code {
+    /* --------------------------------------
+           0.1a S I D E B A R
+       -------------------------------------- */
+
+        private bool collapseNavMenu = false;
+
+        private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+        private void ToggleNavMenu()
+        {
+            collapseNavMenu = !collapseNavMenu;
+        }
+
+}
