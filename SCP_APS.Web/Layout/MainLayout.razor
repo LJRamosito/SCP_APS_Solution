@@ -24,50 +24,50 @@
                 </ul>
             </li>
             <li>
-                <NavLink href="/forecasting" @onclick="@(() => SetActiveLink("/forecasting"))" class="@(IsActiveLink("/") ? "active" : null)">
+                <NavLink href="/forecasting" @onclick="@(() => SetActiveLink("/forecasting"))" class="@(IsActiveLink("/") ? "active" : "")">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Forecasting</span>
                 </NavLink>
                 <ul class="sub-menu">
                     <li><a href="/statistical">Statistical</a></li>
-                    <li class="active"><a href="/collaborative">Collaborative</a></li>
+                    <li><a href="/collaborative">Collaborative</a></li>
                     <li><a href="/consensus">Consensus</a></li>
                     <li><a href="/sales-plan">Sales Plan</a></li>
                     <li><a href="/budget">Budget</a></li>
                 </ul>
             </li>
             <li>
-                <NavLink href="/sales-operations" @onclick="@(() => SetActiveLink("/sales-operations"))" class="@(IsActiveLink("/") ? "active" : null)">
+                <NavLink href="/sales-operations" @onclick="@(() => SetActiveLink("/sales-operations"))" class="@(IsActiveLink("/") ? "active" : "")">
                     <i class='bx bxs-brain'></i>
                     <span class="link-name">Sales & Operations</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/supply-planning" @onclick="@(() => SetActiveLink("/sales-operations"))" class="@(IsActiveLink("/") ? "active" : null)">
+                <NavLink href="/supply-planning" @onclick="@(() => SetActiveLink("/sales-operations"))" class="@(IsActiveLink("/") ? "active" : "")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Supply Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/material-planning" @onclick="@(() => SetActiveLink("/material-planning"))" class="@(IsActiveLink("/") ? "active" : null)">
+                <NavLink href="/material-planning" @onclick="@(() => SetActiveLink("/material-planning"))" class="@(IsActiveLink("/") ? "active" : "")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Material Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/mill-planning" @onclick="@(() => SetActiveLink("/mill-planning"))" class="@(IsActiveLink("/") ? "active" : null)">
+                <NavLink href="/mill-planning" @onclick="@(() => SetActiveLink("/mill-planning"))" class="@(IsActiveLink("/") ? "active" : "")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Mill Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/caster-scheduling" @onclick="@(() => SetActiveLink("/caster-scheduling"))" class="@(IsActiveLink("/") ? "active" : null)">
+                <NavLink href="/caster-scheduling" @onclick="@(() => SetActiveLink("/caster-scheduling"))" class="@(IsActiveLink("/") ? "active" : "")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Caster Scheduling</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/inventory-management" @onclick="@(() => SetActiveLink("/inventory-management"))" class="@(IsActiveLink("/") ? "active" : null)">
+                <NavLink href="/inventory-management" @onclick="@(() => SetActiveLink("/inventory-management"))" class="@(IsActiveLink("/") ? "active" :"")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Inventory Management</span>
                 </NavLink>
@@ -105,7 +105,14 @@
                   0.1b.2b.3a    panel
                  --------------------------------------
             */ *@
-            <div class="panel"></div>
+            <div class="panel">
+                <div class="panel-search">
+                    <i class='bx bxs-skip-previous-circle'></i>
+                    <input class="form-control" placeholder="Search for..." />
+                    <i class='bx bxs-skip-next-circle'></i>
+                </div>
+            </div>
+
 
             @*/* --------------------------------------
                   0.1b.2b.3a    main-content
