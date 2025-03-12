@@ -13,22 +13,22 @@
         </div>
         <ul class="nav-links">
             <li>
-                <NavLink href="/">
+                <NavLink href="/" Match="NavLinkMatch.All" @onclick="@(() => {SetActiveLink("/"); ToggleSubMenu("/");})" class="@(IsActiveLink("/") ? "active" : "")">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Dashboard</span>
                 </NavLink>
-                <ul class="sub-menu">
-                    <li><a href="/">ABC Analysis</a></li>
+                <ul class="sub-menu @SubMenuDashboardCssClass">
+                    <li><a href="#">ABC Analysis</a></li>
                     <li><a href="#">Dashboard 2</a></li>
                     <li><a href="#">Dashboard 3</a></li>
                 </ul>
             </li>
             <li>
-                <NavLink href="/forecasting" @onclick="@(() => SetActiveLink("/forecasting"))" class="@(IsActiveLink("/forecasting") ? "active" : "")">
+                <NavLink href="/forecasting" @onclick="@(() => {SetActiveLink("/forecasting"); ToggleSubMenu("/forecasting");})" class="@(IsActiveLink("/forecasting") ? "active" : "")">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Forecasting</span>
                 </NavLink>
-                <ul class="sub-menu">
+                <ul class="sub-menu @SubMenuForecastingCssClass">
                     <li><a href="/statistical">Statistical</a></li>
                     <li><a href="/collaborative">Collaborative</a></li>
                     <li><a href="/consensus">Consensus</a></li>
@@ -131,18 +131,29 @@
        -------------------------------------- */
 
     private bool collapseNavMenu = false;
-    private bool collapseSubMenu = false;
+    private bool collapseForecastingSubMenu = false;
+    private bool collapseDashboardSubMenu = false;
 
     private string? NavMenuCssClass => collapseNavMenu ? "close" : null;
+    private string? SubMenuForecastingCssClass => collapseForecastingSubMenu ? "showMenu" : null;
+    private string? SubMenuDashboardCssClass => collapseDashboardSubMenu ? "showMenu" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
 
-    private void ToggleSubMenu()
+    private void ToggleSubMenu(string link)
     {
-        collapseSubMenu = !collapseSubMenu;
+        if (link == "/forecasting")
+        {
+            collapseForecastingSubMenu = !collapseForecastingSubMenu;
+        }
+        else if (link == "/")
+        {
+            collapseDashboardSubMenu = !collapseDashboardSubMenu;
+        }
+
     }
 
 
@@ -151,10 +162,6 @@
     protected override void OnParametersSet()
     {
         activeLink = Nav.ToBaseRelativePath(Nav.Uri);
-        Console.WriteLine("thaemas");
-        Console.WriteLine(activeLink);
-        Console.WriteLine("stebo");
-        Console.WriteLine(IsActiveLink("/"));
     }
 
     private void SetActiveLink(string link)
