@@ -13,7 +13,7 @@
         </div>
         <ul class="nav-links">
             <li>
-                <NavLink href="/" Match="NavLinkMatch.All">
+                <NavLink href="/">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Dashboard</span>
                 </NavLink>
@@ -24,7 +24,7 @@
                 </ul>
             </li>
             <li>
-                <NavLink href="/forecasting" @onclick="@(() => SetActiveLink("/forecasting"))" class="@(IsActiveLink("/") ? "active" : "")">
+                <NavLink href="/forecasting" @onclick="@(() => SetActiveLink("/forecasting"))" class="@(IsActiveLink("/forecasting") ? "active" : "")">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Forecasting</span>
                 </NavLink>
@@ -37,37 +37,37 @@
                 </ul>
             </li>
             <li>
-                <NavLink href="/sales-operations" @onclick="@(() => SetActiveLink("/sales-operations"))" class="@(IsActiveLink("/") ? "active" : "")">
+                <NavLink href="/sales-operations" @onclick="@(() => SetActiveLink("/sales-operations"))" class="@(IsActiveLink("/sales-operations") ? "active" : "")">
                     <i class='bx bxs-brain'></i>
                     <span class="link-name">Sales & Operations</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/supply-planning" @onclick="@(() => SetActiveLink("/sales-operations"))" class="@(IsActiveLink("/") ? "active" : "")">
+                <NavLink href="/supply-planning" @onclick="@(() => SetActiveLink("/supply-planning"))" class="@(IsActiveLink("/supply-planning") ? "active" : "")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Supply Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/material-planning" @onclick="@(() => SetActiveLink("/material-planning"))" class="@(IsActiveLink("/") ? "active" : "")">
+                <NavLink href="/material-planning" @onclick="@(() => SetActiveLink("/material-planning"))" class="@(IsActiveLink("/material-planning") ? "active" : "")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Material Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/mill-planning" @onclick="@(() => SetActiveLink("/mill-planning"))" class="@(IsActiveLink("/") ? "active" : "")">
+                <NavLink href="/mill-planning" @onclick="@(() => SetActiveLink("/mill-planning"))" class="@(IsActiveLink("/mill-planning") ? "active" : "")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Mill Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/caster-scheduling" @onclick="@(() => SetActiveLink("/caster-scheduling"))" class="@(IsActiveLink("/") ? "active" : "")">
+                <NavLink href="/caster-scheduling" @onclick="@(() => SetActiveLink("/caster-scheduling"))" class="@(IsActiveLink("/caster-scheduling") ? "active" : "")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Caster Scheduling</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/inventory-management" @onclick="@(() => SetActiveLink("/inventory-management"))" class="@(IsActiveLink("/") ? "active" :"")">
+                <NavLink href="/inventory-management" @onclick="@(() => SetActiveLink("/inventory-management"))" class="@(IsActiveLink("/inventory-management") ? "active" :"")">
                     <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Inventory Management</span>
                 </NavLink>
@@ -131,6 +131,7 @@
        -------------------------------------- */
 
     private bool collapseNavMenu = false;
+    private bool collapseSubMenu = false;
 
     private string? NavMenuCssClass => collapseNavMenu ? "close" : null;
 
@@ -139,17 +140,27 @@
         collapseNavMenu = !collapseNavMenu;
     }
 
+    private void ToggleSubMenu()
+    {
+        collapseSubMenu = !collapseSubMenu;
+    }
+
 
     private string activeLink = "/";
 
-    protected override void OnInitialized()
+    protected override void OnParametersSet()
     {
         activeLink = Nav.ToBaseRelativePath(Nav.Uri);
+        Console.WriteLine("thaemas");
+        Console.WriteLine(activeLink);
+        Console.WriteLine("stebo");
+        Console.WriteLine(IsActiveLink("/"));
     }
 
     private void SetActiveLink(string link)
     {
         activeLink = link;
+        
     }
 
     private bool IsActiveLink(string link)
