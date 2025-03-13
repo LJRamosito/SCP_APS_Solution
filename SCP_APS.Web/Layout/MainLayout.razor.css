@@ -242,7 +242,18 @@
 .panel {
     height: 100%;
     width: 350px;
+    display: flex;
+    flex-direction: column;
 }
+    .panel .panel-header {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: red;
+        padding: 0 15px;
+        font-size: 20px;
+    }
 
     .panel .panel-search {
         display: flex;
