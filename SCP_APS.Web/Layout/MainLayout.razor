@@ -148,10 +148,12 @@
         if (link == "/forecasting")
         {
             collapseForecastingSubMenu = !collapseForecastingSubMenu;
+            collapseDashboardSubMenu = false;
         }
         else if (link == "/")
         {
             collapseDashboardSubMenu = !collapseDashboardSubMenu;
+            collapseForecastingSubMenu = false;
         }
 
     }

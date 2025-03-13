@@ -55,6 +55,10 @@
         .sidebar .nav-links > li:hover {
             background-color: #1d1b31;
         }
+        /*... tbd...*/
+        /*.sidebar .nav-links li.active {
+            border-left: 5px solid #00bfff;
+        }*/
 
             .sidebar .nav-links li ::deep a {
                 display: flex;
@@ -82,7 +86,6 @@
 
 
                 .sidebar .nav-links li .sub-menu {
-/*                    padding: 6px 6px 14px 80px;*/
                     position: relative;
                     display: none;
                 }
@@ -179,7 +182,12 @@
                 margin-top: 0;
                 width: 210px;
                 background-color: #11101d;
+                transition: all 0.3s ease;
             }
+
+                .sidebar.close .nav-links li .sub-menu:hover {
+                    background-color: #1d1b31;
+                }
 
 
 
