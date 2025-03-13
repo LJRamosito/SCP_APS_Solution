@@ -14,7 +14,7 @@
         <ul class="nav-links">
             <li>
                 <NavLink href="/" Match="NavLinkMatch.All" @onclick="@(() => {SetActiveLink("/"); ToggleSubMenu("/");})" class="@(IsActiveLink("/") ? "active" : "")">
-                    <i class='bx bx-line-chart'></i>
+                    <i class='bx bxs-grid-alt'></i>
                     <span class="link-name">Dashboard</span>
                 </NavLink>
                 <ul class="sub-menu @SubMenuDashboardCssClass">
@@ -37,38 +37,44 @@
                 </ul>
             </li>
             <li>
-                <NavLink href="/sales-operations" @onclick="@(() => SetActiveLink("/sales-operations"))" class="@(IsActiveLink("/sales-operations") ? "active" : "")">
+                <NavLink href="/sales-operations" @onclick="@(() => {SetActiveLink("/sales-operations"); ToggleSubMenu("/sales-operations");})" class="@(IsActiveLink("/sales-operations") ? "active" : "")">
                     <i class='bx bxs-brain'></i>
                     <span class="link-name">Sales & Operations</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/supply-planning" @onclick="@(() => SetActiveLink("/supply-planning"))" class="@(IsActiveLink("/supply-planning") ? "active" : "")">
-                    <i class='bx bxs-grid-alt'></i>
+                <NavLink href="/supply-planning" @onclick="@(() => {SetActiveLink("/supply-planning"); ToggleSubMenu("/supply-planning");})" class="@(IsActiveLink("/supply-planning") ? "active" : "")">
+                    <i class='bx bxs-book-heart'></i>
                     <span class="link-name">Supply Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/material-planning" @onclick="@(() => SetActiveLink("/material-planning"))" class="@(IsActiveLink("/material-planning") ? "active" : "")">
-                    <i class='bx bxs-grid-alt'></i>
+                <NavLink href="/order-promising" @onclick="@(() => {SetActiveLink("/order-promising"); ToggleSubMenu("/order-promising");})" class="@(IsActiveLink("/order-promising") ? "active" : "")">
+                    <i class='bx bxs-dish'></i>
+                    <span class="link-name">Order Promising</span>
+                </NavLink>
+            </li>
+            <li>
+                <NavLink href="/material-planning" @onclick="@(() => {SetActiveLink("/material-planning"); ToggleSubMenu("/material-planning");})" class="@(IsActiveLink("/material-planning") ? "active" : "")">
+                    <i class='bx bxs-cart-alt'></i>
                     <span class="link-name">Material Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/mill-planning" @onclick="@(() => SetActiveLink("/mill-planning"))" class="@(IsActiveLink("/mill-planning") ? "active" : "")">
-                    <i class='bx bxs-grid-alt'></i>
+                <NavLink href="/mill-planning" @onclick="@(() => {SetActiveLink("/mill-planning"); ToggleSubMenu("/mill-planning");})" class="@(IsActiveLink("/mill-planning") ? "active" : "")">
+                    <i class='bx bxs-factory'></i>
                     <span class="link-name">Mill Planning</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/caster-scheduling" @onclick="@(() => SetActiveLink("/caster-scheduling"))" class="@(IsActiveLink("/caster-scheduling") ? "active" : "")">
-                    <i class='bx bxs-grid-alt'></i>
+                <NavLink href="/caster-scheduling" @onclick="@(() => {SetActiveLink("/caster-scheduling"); ToggleSubMenu("/caster-scheduling");})" class="@(IsActiveLink("/caster-scheduling") ? "active" : "")">
+                    <i class='bx bxs-basket'></i>
                     <span class="link-name">Caster Scheduling</span>
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/inventory-management" @onclick="@(() => SetActiveLink("/inventory-management"))" class="@(IsActiveLink("/inventory-management") ? "active" :"")">
-                    <i class='bx bxs-grid-alt'></i>
+                <NavLink href="/inventory-management" @onclick="@(() => {SetActiveLink("/inventory-management"); ToggleSubMenu("/inventory-management");})" class="@(IsActiveLink("/inventory-management") ? "active" :"")">
+                    <i class='bx bx-clipboard'></i>
                     <span class="link-name">Inventory Management</span>
                 </NavLink>
             </li>
@@ -153,6 +159,11 @@
         else if (link == "/")
         {
             collapseDashboardSubMenu = !collapseDashboardSubMenu;
+            collapseForecastingSubMenu = false;
+        }
+        else
+        {
+            collapseDashboardSubMenu = false;
             collapseForecastingSubMenu = false;
         }
 

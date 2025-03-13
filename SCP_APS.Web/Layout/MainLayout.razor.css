@@ -170,11 +170,6 @@
                     white-space: unset !important;
                 }
 
-
-                /*            .sidebar.close .nav-links li ::deep a .link-name {
-                display: none;
-                pointer-events: none;
-            }*/
             .sidebar.close .nav-links li .sub-menu {
                 position: absolute;
                 left: 100%;
