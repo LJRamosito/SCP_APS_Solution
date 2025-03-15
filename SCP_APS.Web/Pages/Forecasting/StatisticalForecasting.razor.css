@@ -11,6 +11,7 @@
         padding-left: 24px;
         font-size: 13px;
         border-bottom: 1px solid #E6E9ED;
+        border-radius: 6px;
     }
 
         .forecasting .bar-forecast-tabs > li {
@@ -23,22 +24,23 @@
             border: 1px solid #E6E9ED;
         }
 
-            .forecasting .bar-forecast-tabs > li.lisema {
-                background-color: #fff;  
-                border-bottom: none;
-            }
-
-                .forecasting .bar-forecast-tabs > li.lisema a {
-                font-weight: 700;
-            }
-
             .forecasting .bar-forecast-tabs > li a {
                 text-decoration: none;
                 color: #333;
             }
 
-   
-   .forecasting .tab-forecast-content {
+            .forecasting .bar-forecast-tabs > li.lisema {
+                background-color: #fff;
+                border-bottom: none;
+            }
 
-       
+                .forecasting .bar-forecast-tabs > li.lisema a {
+                    font-weight: 700;
+                }
+
+    .forecasting .tab-forecast-content {
+        height: 750px;
+        border: 1px solid #E6E9ED;
+        border-top: none;
+        border-radius:  6px;
     }
