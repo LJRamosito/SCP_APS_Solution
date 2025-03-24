@@ -1,0 +1,63 @@
+﻿table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+th {
+    background-color: #555;
+    color: white;
+}
+
+    th:first-child, td:first-child {
+        background-color: #666;
+        color: white;
+    }
+
+td {
+    background-color: #f8f8f8;
+}
+
+    td:nth-child(2) {
+        background-color: #a00;
+        color: white;
+        font-weight: bold;
+    }
+
+    td span.up {
+        color: green;
+    }
+
+    td span.down {
+        color: red;
+    }
+
+    td.highlight {
+        background-color: #f4b183;
+    }
+
+.progress-bar {
+    height: 10px;
+    border-radius: 5px;
+    background-color: lightgray;
+    position: relative;
+    width: 100px;
+    margin: auto;
+}
+
+    .progress-bar div {
+        height: 100%;
+        background-color: navy;
+        border-radius: 5px;
+    }
+
+    .progress-bar.brown div {
+        background-color: brown;
+    }
